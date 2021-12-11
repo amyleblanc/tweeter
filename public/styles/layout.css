@@ -17,14 +17,10 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro"; /* How do I get the browser to degrade to sans-serif if it can't load the correct font? */
   font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
-.nav {
-  font-family: "Bungee";
-}

@@ -1,0 +1,23 @@
+.header {
+  position: absolute;
+  z-index: 1;
+  height: 485px;
+  width: 100%;
+  padding-top: 125px;
+  color: #ffffff;
+  background-color: #a14091;
+  font-family: 'Source Sans Pro', sans-serif;  
+  font-size: 0px;
+  background-color: #f2f0f5;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-username {
+  display: flex;
+  font-size: 2.5rem;
+
+}

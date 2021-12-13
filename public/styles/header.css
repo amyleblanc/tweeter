@@ -1,5 +1,4 @@
 .header {
-  position: absolute;
   z-index: 1;
   height: 485px;
   width: 100%;
@@ -19,5 +18,4 @@
 .header-username {
   display: flex;
   font-size: 2.5rem;
-
 }

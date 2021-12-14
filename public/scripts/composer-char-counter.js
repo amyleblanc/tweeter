@@ -5,6 +5,10 @@ $(document).ready(function() {
     const countDown = 140 - charCount;
 
     document.getElementById("new-tweet-count").innerHTML = countDown;
+
+    if (countDown < 0) {
+      document.getElementById("new-tweet-count").style.color = "red";
+    };
   });
 
 });

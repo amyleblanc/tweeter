@@ -27,3 +27,7 @@
   background-color: #f4f1ec;
   width: 600px;
 }
+
+.new-tweet-error {
+  color: red;
+}

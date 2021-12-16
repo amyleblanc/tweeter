@@ -52,9 +52,12 @@ article:hover {
 article header {
   width: 95%;
   padding: 1rem;
-  border: none;
-  border-bottom: 0.2rem solid #000000;
   margin: 15px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 article footer {
@@ -70,9 +73,28 @@ article footer {
 
 }
 
-article p {
-  margin: 0px;
-  padding-bottom: 10px;
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 200px;
+}
+
+.user-handle {
+  color: rgb(211, 211, 211);
+  font-weight: bold;
+}
+
+.message {
+  width: 95%;
+  padding: 16px;
+  padding-bottom: 32px;
+  border: none;
+  border-bottom: 0.2rem solid #000000;
+  margin: 15px;
+  margin-top: 0px;
+  font-weight: bold;
 }
 
 .date {

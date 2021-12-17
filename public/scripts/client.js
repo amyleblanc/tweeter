@@ -1,12 +1,5 @@
 $(document).ready(function() {
-  
-  const renderTweets = function(tweets) {
-    tweets.forEach(tweet => {
-      const result = createTweetElement(tweet);
-      $('.tweets').append(result);
-    });
-  }
-  
+
   const createTweetElement = function(tweet) {
     const $tweet = `
     <article>
@@ -15,7 +8,7 @@ $(document).ready(function() {
               <div>
                 <img src="${tweet.user.avatars}">
               </div>
-              <div>${tweet.user.name}</div>
+              <div class="user-name">${tweet.user.name}</div>
             </div>
             <div class="user-handle">${tweet.user.handle}</div>
           </header>
@@ -36,32 +29,44 @@ $(document).ready(function() {
     `;
     return $tweet;
   };
-  
-  const initialTweets = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1639452559732
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1639538959732
-    }
-  ];
 
-  renderTweets(initialTweets);
+  const renderTweets = function(tweets) {
+    $('.tweets').empty();
+    for (let tweet of tweets) {
+    // tweets.forEach(tweet => {
+      const result = createTweetElement(tweet);
+      $('.tweets').prepend(result);
+    };
+  }
+  
+  const loadTweets = function () {
+
+    const form = $(this);
+
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      data: form.serialize(),
+      success: function(tweets) {
+        renderTweets(tweets);
+      }
+    })
+  };
+  loadTweets();
+
+  $( "#submit-tweet" ).submit(function( event ) {
+    event.preventDefault();
+
+    const form = $(this);
+
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: form.serialize(),
+      success: function() {
+        loadTweets();
+      }
+    })
+  });
 
 });

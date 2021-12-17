@@ -25,9 +25,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 10px;
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;  
   font-size: 1.5rem;
@@ -51,13 +49,11 @@ article:hover {
 
 article header {
   width: 95%;
-  padding: 1rem;
+  padding: 5px;
   margin: 15px;
-  margin-bottom: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 article footer {
@@ -75,10 +71,14 @@ article footer {
 
 .user-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   flex-direction: row;
-  width: 200px;
+  width: 400px;
+}
+
+.user-name {
+  margin-left: 10px;
 }
 
 .user-handle {

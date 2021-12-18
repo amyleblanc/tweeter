@@ -78,8 +78,4 @@ $(document).ready(function() {
 
   });
 
-  // $("#new-tweet-btn").click(function(){
-  //   document.getElementById("new-tweet-count").innerHTML = 140;
-  // });
-
 });

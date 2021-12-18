@@ -15,7 +15,7 @@ $(document).ready(function() {
           <div class="message">${tweet.content.text}</div>
           <footer>
             <div class="date">
-              ${new Date(tweet.created_at)}
+              ${timeago.format(tweet.created_at)}
             </div>
             <div class="footer-icons">
               <i class="fas fa-flag"></i>            
@@ -54,7 +54,7 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  $( "#submit-tweet" ).submit(function( event ) {
+  $("#submit-tweet").submit(function(event) {
     event.preventDefault();
 
     const form = $(this);
@@ -67,6 +67,12 @@ $(document).ready(function() {
         loadTweets();
       }
     })
+    $("#submit-tweet").trigger("reset");
+
+  });
+
+  $("#new-tweet-btn").click(function(){
+    document.getElementById("new-tweet-count").innerHTML = 140;
   });
 
 });

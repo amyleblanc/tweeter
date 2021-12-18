@@ -33,7 +33,6 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     $('.tweets').empty();
     for (let tweet of tweets) {
-    // tweets.forEach(tweet => {
       const result = createTweetElement(tweet);
       $('.tweets').prepend(result);
     };
@@ -56,6 +55,13 @@ $(document).ready(function() {
 
   $("#submit-tweet").submit(function(event) {
     event.preventDefault();
+    const inputBox = $('#tweet-text').val();
+
+    if (inputBox === '') {
+      return alert("You need to type something before submitting!");
+    } else if (inputBox.length > 140) {
+      return alert("You're tweet is too long.");
+    };
 
     const form = $(this);
 
@@ -67,12 +73,13 @@ $(document).ready(function() {
         loadTweets();
       }
     })
+    $("#new-tweet-count").html(140);
     $("#submit-tweet").trigger("reset");
 
   });
 
-  $("#new-tweet-btn").click(function(){
-    document.getElementById("new-tweet-count").innerHTML = 140;
-  });
+  // $("#new-tweet-btn").click(function(){
+  //   document.getElementById("new-tweet-count").innerHTML = 140;
+  // });
 
 });

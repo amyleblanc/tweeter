@@ -31,3 +31,27 @@
 .new-tweet-error {
   color: red;
 }
+
+#text-empty {
+  display: none;
+  padding: 20px;
+  color: white;
+  border: 0.2rem solid red;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: red;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#text-excess {
+  display: none;
+  padding: 20px;
+  color: white;
+  border: 0.2rem solid red;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: red;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}

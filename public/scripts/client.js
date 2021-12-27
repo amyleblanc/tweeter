@@ -64,9 +64,15 @@ $(document).ready(function() {
     const inputBox = $('#tweet-text').val();
 
     if (inputBox === '') {
-      return alert("You need to type something before submitting!");
-    } else if (inputBox.length > 140) {
-      return alert("You're tweet is too long.");
+      return $("#text-empty").css('display', 'block');
+    } else {
+      $("#text-empty").css('display', 'none');
+    };
+    
+    if (inputBox.length > 140) {
+      return $("#text-excess").css('display', 'block');
+    } else {
+      $("#text-excess").css('display', 'none');
     };
 
     const form = $(this);

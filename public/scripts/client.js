@@ -59,6 +59,11 @@ $(document).ready(function() {
   };
   loadTweets();
 
+  $("#navbar-btn").click(function() {
+    $(".new-tweet").css('display', 'flex');
+    return $("#tweet-text").focus();
+  });
+
   $("#submit-tweet").submit(function(event) {
     event.preventDefault();
     const inputBox = $('#tweet-text').val();
@@ -87,6 +92,7 @@ $(document).ready(function() {
     })
     $("#new-tweet-count").html(140);
     $("#submit-tweet").trigger("reset");
+    $(".new-tweet").css('display', 'none');
 
   });
 

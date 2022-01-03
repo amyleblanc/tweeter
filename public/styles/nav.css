@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 2;
   color: #ffffff;
-  background-color: #4056A1;
+  background-color: #4056a1f2;
   height: 100px;
   width: 100%;
   padding-left: 1.5em;
@@ -34,7 +34,7 @@
 }
 
 #navbar-btn {
-  background-color: #4056A1;
+  background-color: #4057a100;
   border: none;
   color: #ffffff;
   cursor: pointer;

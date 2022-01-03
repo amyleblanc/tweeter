@@ -13,11 +13,13 @@
   justify-content: space-between;
 }
 
-.navbar-logo {
+.navbar-logo a {
   font-family: "Bungee", cursive;
   font-size: 3rem;
   flex-direction: column;
   align-items: flex-start;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .navbar-menu {
@@ -40,7 +42,16 @@
   padding-bottom: 8px;
 }
 
-#navbar-icon:hover {
+#navbar-icon .fas {
+  transform: none;
+  color: #c60c59;
+}
+
+#navbar-btn:hover {
+  transform: scale(1.15);
+}
+
+#navbar-btn:hover + #navbar-icon {
   animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: center;

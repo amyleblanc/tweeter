@@ -30,3 +30,25 @@
 .navbar-menu i{
   color: red;
 }
+
+#navbar-btn {
+  background-color: #4056A1;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
+
+#navbar-icon:hover {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  animation-name: bounce-icon;
+  animation-timing-function: ease;
+}
+@keyframes bounce-icon {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}

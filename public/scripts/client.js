@@ -59,6 +59,26 @@ $(document).ready(function() {
   };
   loadTweets();
 
+  $(window).scroll(function() {
+    const btn = $("#scroll-up");
+
+    if ($(window).scrollTop() > 300) {
+      $(".navbar-menu").css("display", "none");
+      $(".navbar").css("background-color", "#4056a100");
+      btn.addClass("show");
+    } else {
+      $(".navbar-menu").css("display", "flex");
+      $(".navbar").css("background-color", "#4056a1f2");
+      btn.removeClass("show");
+    }
+  });
+
+  $("#scroll-up").click(function() {
+    $("html, body").animate({scrollTop: 0}, "300");
+    $(".new-tweet").css('display', 'flex');
+    return $("#tweet-text").focus();
+  });
+
   $("#navbar-btn").click(function() {
     $(".new-tweet").css('display', 'flex');
     return $("#tweet-text").focus();
@@ -90,6 +110,7 @@ $(document).ready(function() {
         loadTweets();
       }
     })
+    
     $("#new-tweet-count").html(140);
     $("#submit-tweet").trigger("reset");
     $(".new-tweet").css('display', 'none');

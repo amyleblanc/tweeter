@@ -20,6 +20,7 @@
   align-items: flex-start;
   color: #ffffff;
   text-decoration: none;
+	text-shadow: -3px 2px 9px #4057a1;
 }
 
 .navbar-menu {
@@ -58,6 +59,7 @@
   animation-name: bounce-icon;
   animation-timing-function: ease;
 }
+
 @keyframes bounce-icon {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }

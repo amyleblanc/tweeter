@@ -79,9 +79,11 @@ $(document).ready(function() {
     return $("#tweet-text").focus();
   });
 
+  $(".new-tweet").slideUp(); // always hidden on page load
+
   $("#navbar-btn").click(function() {
-    $(".new-tweet").css('display', 'flex');
-    return $("#tweet-text").focus();
+    $(".new-tweet").toggle(500);
+    $("#tweet-text").focus();
   });
 
   $("#submit-tweet").submit(function(event) {

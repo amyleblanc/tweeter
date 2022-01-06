@@ -23,17 +23,17 @@ h4 {
 
 #new-tweet-btn {
   background-color: #4056A1;
-  color: #ffffff;
+  color: white;
   padding: 6px;
+  cursor: pointer;
 }
 
 #tweet-text {
   padding: 10px;
-  padding-bottom: 20px;
   border: none;
   border-bottom: 0.2rem solid #000000;
   outline: none;
-  background-color: #e8ebf5;
+  background-color: white;
   width: 600px;
 }
 

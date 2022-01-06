@@ -12,7 +12,7 @@ $(document).ready(function() {
           <header>
             <div class="user-info">
               <div>
-                <img src="${tweet.user.avatars}">
+                <img src="${tweet.user.avatars}" alt="Random user avatar headshot">
               </div>
               <div class="user-name">${tweet.user.name}</div>
             </div>
@@ -24,9 +24,9 @@ $(document).ready(function() {
               ${timeago.format(tweet.created_at)}
             </div>
             <div class="footer-icons">
-              <i class="fas fa-flag"></i>            
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
+              <span title="Flag content"><i class="fas fa-flag"></i></span>
+              <span title="Retweet"><i class="fas fa-retweet"></i></span>
+              <span title="Like this"><i class="fas fa-heart"></i></span>
             </div>
           </footer>
           <br>

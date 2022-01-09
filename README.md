@@ -2,7 +2,7 @@
 
 Welcome to my Tweeter Project!
 
-Tweeter is a simple, single-page Twitter clone used to showcase my skills honed to date using JavaScript, HTML, CSS and jQuery.
+Tweeter is a simple, single-page Twitter clone used to showcase my skills honed to date using JavaScript, jQuery, AJAX, HTML and CSS.
 
 Features include:
 * Post "tweets" up to 140 characters

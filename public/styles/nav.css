@@ -2,12 +2,11 @@
   position: fixed;
   z-index: 2;
   color: #ffffff;
-  background-color: #4056a1f2;
+  background-color: #4056a100;
   height: 100px;
   width: 100%;
   padding-left: 1.5em;
   padding-right: 1.5em;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,4 +63,10 @@
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    background-color: #4057a1;
+  }
 }

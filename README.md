@@ -1,8 +1,23 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Welcome to my Tweeter Project!
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+Tweeter is a simple, single-page Twitter clone used to showcase my skills honed to date using JavaScript, HTML, CSS and jQuery.
+
+Features include:
+* Post "tweets" up to 140 characters
+* Error message displayed for empty tweets or tweets exceeding 140 character limit
+* Animated compose-tweet form can be visible or hidden by clicking on "Write a New Tweet" in the Navigation Bar
+* Navigation Bar disappears when scrolling down on tablet screens
+* When scrolling down on both desktop and tablet screens, a "scroll to the top" button appears in the bottom right corner. Clicking on this will return the user to the top and open the compose-tweet form for input.
+
+N.B. This app is built primarily for tablet and desktop screens.
+
+## Demo
+
+!["Desktop version demo"](https://github.com/amyleblanc/tweeter/blob/master/docs/desktop-tweeter.gif)
+
+!["Tablet version demo"](https://github.com/amyleblanc/tweeter/blob/master/docs/tablet-tweeter.gif)
 
 ## Getting Started
 
@@ -14,5 +29,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+- Node version 14 or above
 - Express
-- Node 5.10.x or above
+- Body-parser
+- Chance
+- MD5

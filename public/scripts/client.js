@@ -1,9 +1,20 @@
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
+  };
+
+  const resetErrors = function() {
+    $("#text-excess").css('display', 'none');
+    $("#text-empty").css('display', 'none');
+    $("#new-tweet-count").removeClass("new-tweet-error");
+  };
+
+  const resetNewTweetForm = function() {
+    $("#new-tweet-count").html(140);
+    $("#submit-tweet").trigger("reset");
   };
 
   const createTweetElement = function(tweet) {
@@ -57,21 +68,29 @@ $(document).ready(function() {
       }
     })
   };
+  
   loadTweets();
+
 
   $(window).scroll(function() {
     const btn = $("#scroll-up");
 
-    if ($(window).scrollTop() > 300) {
+    if ($(window).width() < 1024 && $(window).scrollTop() > 300) {
       $(".navbar-menu").css("display", "none");
-      $(".navbar").css("background-color", "#4056a100");
       btn.addClass("show");
-    } else {
+    } else if ($(window).width() < 1024 && $(window).scrollTop() < 299) {
       $(".navbar-menu").css("display", "flex");
-      $(".navbar").css("background-color", "#4056a1f2");
       btn.removeClass("show");
     }
+
+    if ($(window).scrollTop() > 300) {
+      btn.addClass("show");
+    } else {
+      btn.removeClass("show");
+    }
+    
   });
+
 
   $("#scroll-up").click(function() {
     $("html, body").animate({scrollTop: 0}, "300");
@@ -79,27 +98,32 @@ $(document).ready(function() {
     return $("#tweet-text").focus();
   });
 
-  $(".new-tweet").slideUp(); // always hidden on page load
 
   $("#navbar-btn").click(function() {
+    resetErrors();
+    resetNewTweetForm();
     $(".new-tweet").toggle(500);
+    $(".new-tweet").css('display', 'flex');
     $("#tweet-text").focus();
   });
+
 
   $("#submit-tweet").submit(function(event) {
     event.preventDefault();
     const inputBox = $('#tweet-text').val();
 
     if (inputBox === '') {
-      return $("#text-empty").css('display', 'block');
+      $("#text-empty").css('display', 'block');
+      return $("#tweet-text").focus();
     } else {
-      $("#text-empty").css('display', 'none');
+      resetErrors();
     };
     
     if (inputBox.length > 140) {
+      $("#new-tweet-count").addClass("new-tweet-error");
       return $("#text-excess").css('display', 'block');
     } else {
-      $("#text-excess").css('display', 'none');
+      resetErrors();
     };
 
     const form = $(this);
@@ -113,8 +137,7 @@ $(document).ready(function() {
       }
     })
     
-    $("#new-tweet-count").html(140);
-    $("#submit-tweet").trigger("reset");
+    resetNewTweetForm();
     $(".new-tweet").css('display', 'none');
 
   });

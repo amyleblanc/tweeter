@@ -18,3 +18,17 @@
   font-size: 2.5rem;
   margin: 25px;
 }
+
+@media (min-width: 1024px) {
+  .header {
+    width: 45%;
+    max-width: 550px;
+    height: 80%;
+    margin: 50px;
+    margin-top: 186px;
+    padding-top: 30px;
+  }
+  .header-username {
+    padding-bottom: 20px;
+  }
+}

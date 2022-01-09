@@ -34,6 +34,7 @@ body {
 }
 
 article {
+  box-sizing: border-box;
   border-style: solid;
   margin: 8px;
   width: 650px;
@@ -65,7 +66,6 @@ article footer {
   margin-top: 0px;
   padding-right: 20px;
   padding-left: 20px;
-
 }
 
 .user-info {
@@ -94,7 +94,8 @@ article footer {
   margin: 15px;
   margin-top: 0px;
   font-weight: bold;
-  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 2.5rem;
 }
 
 .date {
@@ -134,4 +135,22 @@ article footer {
 #scroll-up:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    background-color: #e8ebf5;
+  }
+  .container {
+    max-width: 55%;
+    padding-top: 150px;
+  }
+  .message {
+    width: 92%;
+  }
+  article {
+    margin-left: 100px;
+    margin-right: 30px;
+  }
 }

@@ -59,6 +59,7 @@
   animation-timing-function: ease;
 }
 
+/* BOUNCE ANIMATION ON NAVBAR ICON */
 @keyframes bounce-icon {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }

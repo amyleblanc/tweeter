@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // CHARACTER COUNTER FOR NEW TWEET TEXT - CHANGE COLOUR OVER 140
   $('#tweet-text').on('input',function(){
     const charCount = this.value.length;
     const countDown = 140 - charCount;
@@ -10,8 +10,6 @@ $(document).ready(function() {
       $("#new-tweet-count").addClass("new-tweet-error");
     } else {
       $("#new-tweet-count").removeClass("new-tweet-error");
-      $("#text-excess").css('display', 'none');
-      $("#text-empty").css('display', 'none');
     }
   });
 

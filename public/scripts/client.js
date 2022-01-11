@@ -71,7 +71,7 @@ $(document).ready(function() {
   
   loadTweets();
 
-
+  // SHOW/HIDE SCROLL TO TOP BUTTON
   $(window).scroll(function() {
     const btn = $("#scroll-up");
 
@@ -91,15 +91,15 @@ $(document).ready(function() {
     
   });
 
-
+  // CLICK "SCROLL TO THE TOP" BUTTON AND OPEN NEW TWEET FORM
   $("#scroll-up").click(function() {
     $("html, body").animate({scrollTop: 0}, "300");
     $(".new-tweet").css('display', 'flex');
     return $("#tweet-text").focus();
   });
 
-
-  $("#navbar-btn").click(function() {
+  // CLICK NAVBAR BUTTON OR ICON TO SHOW/HIDE NEW TWEET FORM
+  $(".navbar-menu").click(function() {
     resetErrors();
     resetNewTweetForm();
     $(".new-tweet").toggle(500);
@@ -107,7 +107,7 @@ $(document).ready(function() {
     $("#tweet-text").focus();
   });
 
-
+  // SUBMIT TWEET - DISPLAY ERRORS IF APPLICABLE
   $("#submit-tweet").submit(function(event) {
     event.preventDefault();
     const inputBox = $('#tweet-text').val();
@@ -137,6 +137,7 @@ $(document).ready(function() {
       }
     })
     
+    // RESET AND HIDE FORM AFTER SUBMITTING
     resetNewTweetForm();
     $(".new-tweet").css('display', 'none');
 
